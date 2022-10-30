@@ -1,0 +1,39 @@
+!
+!   GAMESS Calculation input file
+!   
+!
+ $CONTRL SCFTYP=RHF MAXIT=200 RUNTYP=HESSIAN
+         COORD=UNIQUE MULT=1 
+         ICHARG=0  
+         DFTTYP=B3LYP
+         MOLPLT=.FALSE. PLTORB=.FALSE.  $END
+ $SYSTEM TIMLIM=2879 MWORDS=250  $END
+
+ $FORCE METHOD=SEMINUM NVIB=2 $END 
+ $STATPT OPTTOL=0.0005 NSTEP=999 $END
+ $STATPT IHREP=0 HSSEND=.TRUE.  $END
+
+ $DFT    METHOD=GRID  NLEB=590  $END
+
+ $BASIS  GBASIS=N21 NGAUSS=3 $END
+
+ $SCF    DIRSCF=.T. $END
+ $GUESS  GUESS=HUCKEL  $END
+
+ $DATA
+   
+  Cs
+
+C     6.0    -0.73     0.75    -0.77
+C     6.0    -0.07     2.06    -1.19
+C     6.0    -0.24     2.98    -0.00
+Br   35.0     0.16    -0.76     1.71
+H     1.0    -1.76     0.72    -1.13
+H     1.0    -0.54     2.48    -2.09
+H     1.0     0.99     1.94    -1.41
+H     1.0    -1.23     3.44    -0.00
+H     1.0     0.50     3.79    -0.00
+ $END
+
+
+! Customizations after this line are persisted when using Do More Calculations
